@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de DEVs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .radio-group {
+            margin-bottom: 15px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Cadastro de DEVs</h1>
+        <p>Complete suas informações</p>
+    </div>
+    
+    <form>
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            <div>
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" required>
+            </div>
+            <div>
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" name="sobrenome" id="sobrenome" required>
+            </div>
+        </fieldset>
+        
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        
+        <div class="radio-group">
+            <label>De qual lado da aplicação você desenvolve?</label>
+            <label>
+                <input type="radio" name="devweb" value="frontend" checked> Front-end
+            </label>
+            <label>
+                <input type="radio" name="devweb" value="backend"> Back-end
+            </label>
+            <label>
+                <input type="radio" name="devweb" value="fullstack"> Fullstack
+            </label>
+        </div>
+        
+        <div>
+            <label for="senioridade">Senioridade</label>
+            <select id="senioridade" name="senioridade" required>
+                <option selected disabled value="">Selecione</option>
+                <option value="junior">Junior</option>
+                <option value="pleno">Pleno</option>
+                <option value="senior">Senior</option>
+            </select>
+        </div>
+        
+        <fieldset>
+            <legend>Tecnologias</legend>
+            <div>
+                <label>Selecione as tecnologias que utiliza:</label>
+                <div class="tech-grid">
+                    <label><input type="checkbox" name="tech" value="html"> HTML</label>
+                    <label><input type="checkbox" name="tech" value="css"> CSS</label>
+                    <label><input type="checkbox" name="tech" value="javascript"> JavaScript</label>
+                    <label><input type="checkbox" name="tech" value="php"> PHP</label>
+                    <label><input type="checkbox" name="tech" value="python"> Python</label>
+                    <label><input type="checkbox" name="tech" value="java"> Java</label>
+                </div>
+            </div>
+        </fieldset>
+        
+        <div>
+            <label for="experiencia">Conte um pouco da sua experiência:</label>
+            <textarea id="experiencia" name="experiencia" rows="4" style="width: 100%;"></textarea>
+        </div>
+        
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
